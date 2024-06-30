@@ -1,0 +1,60 @@
+npm create vite@latest  ---- na vytvorenie projektu cez vite
+npm i                   ---- na instalovanie reactu
+npm run dev             ---- na spustenie servera
+
+ctrl d - multi curzor editing
+
+
+id funguje normalne:
+    <div id='x'></div> //vytvorenie idcka
+    document.getElementById('x') // pouzitie idcka
+
+----ak chcem dat viac elementov dokopy pouzijem fragment
+    <Fragment></Fragment>
+alebo
+    <></>
+-- vo fragmente mozem dat conditional rendering:
+    { items.length === 0 && <p> no items found </p>}
+
+---- na zobrazovanie poloziek v liste
+    {items.map((item) =>(
+        <li>{item}</li>
+    ))}
+
+----hooks
+    const [variable, updaterFunction] = useState(-1);
+---priklad
+--  const[name, setName] = useState('');
+---objektove state hooks
+-- const[person, setPerson] = useState({
+    firstName: '',
+    lastName: '',
+    age: 2
+});
+-- ak chcem updatnut objektovy state hook tak urobim:
+--const update = () =>{
+    const newPerson = {
+        ...person,      //toto nakopiruje ostatne parametre
+        age: 3
+    }
+}
+--ref hook na accesovanie elementov vo Forms
+----const nameRef = useRef<HTMLInputElement>(null);
+    //ptm treba v input fielde zadat ref="nameRef"
+
+
+----interface na posielanie objektov cez komponenty
+interface Props{
+    items: String;
+    nazovFunkcie: (parameter: string) => void;
+}
+
+----rafce na vytvorenie komponentu
+
+----tlacidlo ma aj moznost ze disabled - toto plati aj v blazore
+--<button disabled={premenna}></button>
+
+////export je nieco ako public
+
+----daju sa vytvarat enmums:
+    export const categories = ["Groceries", "Utilities", "Entertaiment"] as const;
