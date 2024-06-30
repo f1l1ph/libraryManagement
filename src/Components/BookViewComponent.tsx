@@ -14,7 +14,7 @@ const BookViewComponent = ({ book }: Props) => {
   const returnBook = () => {
     apiClient
       .put("BorrowOrder/ReturnBook/" + book.activeBorrowOrder.id)
-      .then((res) => {
+      .then(() => {
         window.location.reload();
       })
       .catch((err) => {
@@ -33,7 +33,7 @@ const BookViewComponent = ({ book }: Props) => {
       .post("BorrowOrder/AddBorrowOrder", {
         order: { user, openDate, closeDate, bookId },
       })
-      .then((res) => {
+      .then(() => {
         window.location.reload();
       })
       .catch((err) => {
@@ -44,7 +44,7 @@ const BookViewComponent = ({ book }: Props) => {
   const deleteBook = () => {
     apiClient
       .delete("Book/DeleteBook/" + book.id)
-      .then((res) => {
+      .then(() => {
         window.location.reload();
       })
       .catch((err) => {

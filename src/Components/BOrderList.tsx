@@ -23,6 +23,8 @@ const BOrderList = () => {
             >
               Submit
             </button>
+
+            <p>{bookId}</p>
           </div>
         </div>
       </div>
