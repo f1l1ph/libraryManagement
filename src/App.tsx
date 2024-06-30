@@ -1,11 +1,14 @@
+import { useState } from "react";
 import "./App.css";
 import AddBookComponent from "./Components/AddBookComponent";
-import BOrderList from "./Components/BOrderList";
+import BOrderList, { BorrowOrder } from "./Components/BOrderList";
 import BookViewComponent from "./Components/BookViewComponent";
 import useBooks from "./Hooks/UseBooks";
+import ShowOrders from "./Components/ShowOrders";
 
 function App() {
   const { books, error } = useBooks();
+  const [orders, setOrders] = useState<BorrowOrder[]>([]);
 
   return (
     <>
@@ -22,7 +25,17 @@ function App() {
         ))}
       </ul>
       <div className="flex justify-center items-center p-4">
-        <BOrderList />
+        <BOrderList setOrders={setOrders} />
+      </div>
+
+      <div>
+        <ul className="flex flex-wrap mr-auto ml-auto justify-center">
+          {orders?.map((order) => (
+            <li key={order.id} className="p-4">
+              <ShowOrders order={order} />
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );
