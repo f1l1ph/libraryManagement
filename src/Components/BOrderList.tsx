@@ -14,7 +14,7 @@ const BOrderList = () => {
             <input
               type="number"
               placeholder="Type here"
-              className="input input-bordered input-primary w-full max-w-xs text-white join-item"
+              className="input input-bordered input-primary w-full max-w-xs text-primary join-item"
               onChange={(e) => setBookId(parseInt(e.target.value))}
             />
             <button

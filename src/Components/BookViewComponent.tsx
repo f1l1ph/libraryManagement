@@ -99,7 +99,7 @@ const BookViewComponent = ({ book }: Props) => {
             <input
               type="text"
               placeholder="Type your username"
-              className="input input-bordered w-full max-w-xs text-white"
+              className="input input-bordered w-full max-w-xs text-primary"
               onChange={(e) => setUser(e.target.value)}
             />
             <button className="btn btn-accent" onClick={borrowBook}>
